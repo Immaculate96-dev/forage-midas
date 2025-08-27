@@ -5,7 +5,7 @@ import com.jpmc.midascore.repository.UserRepository;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DatabaseConduit {
+public class DatabaseCondui {
     private final UserRepository userRepository;
 
     public DatabaseConduit(UserRepository userRepository) {
