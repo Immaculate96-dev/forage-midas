@@ -2,45 +2,55 @@ package com.jpmc.midascore.entity;
 
 import jakarta.persistence.*;
 
+
 @Entity
+@Table(name = "users")
 public class UserRecord {
 
     @Id
-    @GeneratedValue()
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Column(nullable = false)
-    private String name;
+    private String username;
 
-    @Column(nullable = false)
-    private float balance;
+    private String email;
 
-    protected UserRecord() {
-    }
+    // Other user fields
 
-    public UserRecord(String name, float balance) {
-        this.name = name;
-        this.balance = balance;
-    }
+    // Constructors, getters, setters
 
-    @Override
-    public String toString() {
-        return String.format("User[id=%d, name='%s', balance='%f'", id, name, balance);
+    public UserRecord(String userDatum, float v) {}
+
+    public UserRecord(String username, String email) {
+        this.username = username;
+        this.email = email;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public float getBalance() {
-        return balance;
+        return 0;
     }
 
-    public void setBalance(float balance) {
-        this.balance = balance;
+    public void setBalance(float v) {
+
     }
 }
